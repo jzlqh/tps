@@ -12,3 +12,6 @@ const findMiddle = head => {
 
 const c = findMiddle(link)
 console.log('findMiddle', c);
+// /card/apply
+
+// 175
