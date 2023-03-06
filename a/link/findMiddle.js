@@ -15,3 +15,5 @@ console.log('findMiddle', c);
 // /card/apply
 
 // 175
+
+bycard - web - translation
