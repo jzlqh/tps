@@ -1,31 +1,12 @@
-import { useState } from "react";
-import useCallbackState from "./hooks/useCallbackState";
-import useDidUpdateEffect from './hooks/useDidUpdateEffect'
-const App = () => {
-  const [val, setVal] = useState({})
-  const [data, setData] = useCallbackState(1);
+import React from 'react';
+import { Button } from 'antd';
+import 'antd/dist/reset.css';
+import './App.css';
 
-  const handleClick = () => {
-    setData(data + 1, function (data) {
-      console.log("callback", data)
-    })
-  }
-  const changeVal = () => {
-    setVal({
-      test: 'val'
-    })
-  }
-  useDidUpdateEffect(() => {
-    if (val) {
-      console.log('val')
-    }
-  }, val)
+const App = () => (
+  <div className="App">
+    <Button type="primary">Button</Button>
+  </div>
+);
 
-  return (
-    <div>
-      <button onClick={handleClick}>+1</button>
-      <button onClick={changeVal}>change val</button>
-    </div>
-  )
-}
-export default App
+export default App;
