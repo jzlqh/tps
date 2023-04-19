@@ -19,3 +19,4 @@ const firstUniqChar = str => {
 }
 
 console.log('firstUniqChar', firstUniqChar(str));
+

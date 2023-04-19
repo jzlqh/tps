@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const fs = require("fs");
 const shell = require('shelljs')
 const exec = require('child_process').exec
@@ -17,7 +18,6 @@ function listFile(dir) {
       if (suffix.length <= 2 && suffix[suffix.length - 1] === 'less') {
         list.push(fullpath);
       }
-      // list.push(fullpath);
     }
   });
   return list;
@@ -32,3 +32,4 @@ function compileFile(res) {
   })
 }
 compileFile(res)
+

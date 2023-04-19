@@ -9,7 +9,6 @@ const t = require('@babel/types')
 const list = [];
 
 const parses = (item) => {
-  // const codes = fs.readFileSync('/Users/sh00122ml/work/marvel-fiat/src/bybitizens/otc/desktop/containers/trade/taker/TradeList.jsx')
   const codes = fs.readFileSync(item)
   const codeStr = codes.toString('utf-8')
   const Ast = babylon.parse(codeStr, {
@@ -39,7 +38,6 @@ const parses = (item) => {
     concise: false,
     quotes: "double",
   }, codes)
-  console.log(result);
   fs.writeFileSync(item, result.code)
 }
 
@@ -56,15 +54,17 @@ function listFile(dir) {
       if (suffix.length <= 2 && suffix[suffix.length - 1] === 'jsx') {
         list.push(fullpath);
       }
-      // list.push(fullpath);
     }
   });
   return list;
 }
 
 const res = listFile('/Users/sh00122ml/work/marvel-fiat/src/bybitizens/otc/desktop');
-res.forEach(ele => {
-  parses(ele)
-})
-// console.log(res)
+
+function compileFile(res) {
+  res.forEach(ele => {
+    parses(ele)
+  })
+}
+compileFile(res)
 
