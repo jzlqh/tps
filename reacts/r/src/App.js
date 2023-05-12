@@ -10,6 +10,7 @@ function App() {
       <button onClick={() => {
         setNum(num + 1)
       }}>btns</button>
+      <h2>tests</h2>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

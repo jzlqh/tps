@@ -26,6 +26,8 @@ const ForkTsCheckerWebpackPlugin =
     : require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
+const { WebUpdateNotificationPlugin } = require('@plugin-web-update-notification/webpack')
+
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
@@ -618,6 +620,15 @@ module.exports = function (webpackEnv) {
       // during a production build.
       // Otherwise React will be compiled in the very slow development mode.
       new webpack.DefinePlugin(env.stringified),
+
+      // logVersion
+      new WebUpdateNotificationPlugin({
+        versionType: 'custom',
+        logVersion: true,
+        checkInterval: 2000,
+        customVersion: '1q2w3e'
+      }),
+
       // Experimental hot reloading for React .
       // https://github.com/facebook/react/tree/main/packages/react-refresh
       isEnvDevelopment &&

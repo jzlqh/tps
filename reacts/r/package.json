@@ -135,5 +135,9 @@
     "presets": [
       "react-app"
     ]
+  },
+  "homepage": "./",
+  "devDependencies": {
+    "@plugin-web-update-notification/webpack": "^1.6.1"
   }
 }
