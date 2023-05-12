@@ -11,3 +11,4 @@ function searchFiles(directory, ignoreGlobPatterns = [], useGitIgnore = true) {
 }
 
 module.exports = { searchFiles };
+

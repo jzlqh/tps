@@ -116,12 +116,13 @@ module.exports = class ComponentsDependenciesAnalyzerPlugin {
     this.context = null;
     this.entryList = [];
     this.options = {                                                                                                  // 是否翻转依赖表，（tree 为 true 时，此选项失效）
-      relativePath: true, 
-      ...options                                             
+      relativePath: true,
+      ...options
     }
     this.dependencies = {};
     this.allFileList = new Set();
   }
+
   skip(filePath) {
     return filePath && filePath.includes('node_modules');
   }
@@ -166,14 +167,14 @@ module.exports = class ComponentsDependenciesAnalyzerPlugin {
     rimraf.sync('./componentsCollect')
     if (!fs.existsSync('./componentsCollect')) {
       fs.mkdirSync('./componentsCollect');
-  }
+    }
     const treeMap = {
       name: 'otcTreeMap',
       children: []
     }
-    const childrenSup = [] 
-    
-    Object.keys(result).forEach((key, index) => { 
+    const childrenSup = []
+
+    Object.keys(result).forEach((key, index) => {
       const childrenSub = []
       result[key].forEach((e, i) => {
         childrenSub.push({
@@ -223,3 +224,4 @@ module.exports = class ComponentsDependenciesAnalyzerPlugin {
     });
   }
 };
+

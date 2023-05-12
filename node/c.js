@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+#!/usr/bin/env node9
 const fs = require("fs");
 const shell = require('shelljs')
 const exec = require('child_process').exec
